@@ -1,0 +1,28 @@
+//Servo Controll Door lock I Sondre B. Humberset = ServoGuy :D
+
+#include <Servo.h>
+int button1 = 4; 
+int press1 = 0;
+Servo servo1;
+void setup()
+{
+  pinMode(button1, INPUT);
+  servo1.attach(7);
+  digitalWrite(4, HIGH); 
+}
+void loop()
+{
+  press1 = digitalRead(button1);
+  if (press1 == HIGH)
+  {
+   
+    servo1.write(73);
+    
+  }
+  
+  if (press1 == LOW)
+  {
+   
+    servo1.write(89);
+  }
+}
